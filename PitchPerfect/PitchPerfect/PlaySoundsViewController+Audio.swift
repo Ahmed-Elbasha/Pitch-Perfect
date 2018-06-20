@@ -94,8 +94,10 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
                 
                 if let rate = rate {
                     delayInSeconds = Double(self.audioFile.length - playerTime.sampleTime) / Double(self.audioFile.processingFormat.sampleRate) / Double(rate)
+                    self.totalLengthLabel.text = String(describing: delayInSeconds)
                 } else {
                     delayInSeconds = Double(self.audioFile.length - playerTime.sampleTime) / Double(self.audioFile.processingFormat.sampleRate)
+                    self.totalLengthLabel.text = String(describing: delayInSeconds)
                 }
             }
             
